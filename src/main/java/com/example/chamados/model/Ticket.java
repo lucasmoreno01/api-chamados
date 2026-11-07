@@ -1,6 +1,5 @@
 package com.example.chamados.model;
 
-import com.example.chamados.model.Priority;
 import lombok.*;
 
 @Getter
@@ -10,9 +9,9 @@ import lombok.*;
 public class Ticket {
 
     private Long id;
-    private String title;
-    private String requester;
-    private String sector;
-    private Priority priority;
+    private String titulo;
+    private String solicitante;
+    private String setor;
+    private Priority prioridade;
     private Status status;
 }
