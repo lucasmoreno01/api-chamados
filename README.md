@@ -33,3 +33,8 @@ Neste projeto, os chamados são armazenados em memória utilizando coleções Ja
 Esse tipo de armazenamento mantém os registros disponíveis apenas enquanto a aplicação está em execução. Quando o Spring Boot é encerrado ou reiniciado, os dados mantidos na memória são perdidos, pois não existe um banco de dados ou outro mecanismo de persistência responsável por armazená-los permanentemente.
 
 Além disso, os chamados fictícios definidos inicialmente são carregados novamente quando a aplicação é iniciada. Por esse motivo, os registros cadastrados durante a execução anterior não permanecem disponíveis após uma reinicialização.
+
+
+### Testes e evidências
+
+As evidências dos testes se encontra no PDF evidencias_dos_testes.pdf ![Evidencias](evidencias_dos_testes.pdf)
