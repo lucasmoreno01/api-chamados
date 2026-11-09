@@ -15,6 +15,7 @@ import com.example.chamados.model.Status;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import java.util.EnumMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.List;
 
@@ -78,15 +79,18 @@ public class TicketsController {
     }
 
     @GetMapping("/resumo")
-    public Map<Status, Long> resumoPorStatus() {
-        Map<Status, Long> resumo = new EnumMap<>(Status.class);
+    public Map<String, Long> resumoPorStatus() {
+        Map<String, Long> resumo = new LinkedHashMap<>();
 
         for (Status status : Status.values()) {
             long quantidade = TicketsData.tickets.stream()
                     .filter(ticket -> ticket.getStatus() == status)
                     .count();
-            resumo.put(status, quantidade);
+
+            resumo.put(status.name().toLowerCase(), quantidade);
         }
+
+        resumo.put("total", (long) TicketsData.tickets.size());
 
         return resumo;
     }
